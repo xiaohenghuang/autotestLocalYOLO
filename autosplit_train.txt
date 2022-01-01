@@ -1,0 +1,15 @@
+./labeled_data/21-04-13_LOC02_T1_F2_VL.JPG
+./labeled_data/21-04-13_LOC02_T2_F1_VL.JPG
+./labeled_data/21-04-13_LOC02_T3_F1_VL.JPG
+./labeled_data/21-04-13_LOC03_T1_F1_VL.JPG
+./labeled_data/21-04-13_LOC03_T1_F2_VL.JPG
+./labeled_data/21-04-13_LOC03_T2_F1_VL.JPG
+./labeled_data/21-04-13_LOC03_T2_F2_VL.JPG
+./labeled_data/21-04-13_LOC03_T3_F1_VL.JPG
+./labeled_data/21-04-13_LOC03_T3_F2_VL.JPG
+./labeled_data/21-04-13_LOC03_T4_F1_VL.JPG
+./labeled_data/21-04-13_LOC04_T1_F1_VL.JPG
+./labeled_data/21-04-13_LOC04_T2_F1_VL.JPG
+./labeled_data/21-04-14_LOC17_T1_F1_VL.JPG
+./labeled_data/21-04-14_LOC17_T1_F2_VL.JPG
+./labeled_data/21-04-14_LOC17_T2_F1_VL.JPG
