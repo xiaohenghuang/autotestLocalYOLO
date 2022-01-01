@@ -35,11 +35,19 @@ jobs:
 
 
 
-      - name: Archive generated PDF file
+      - name: Archive generated model
         uses: actions/upload-artifact@v2
         with:
           name: best.pt
           path: yolov5/runs/train/test/weights
+      - uses: actions/download-artifact@v2
+        with:
+          name: best.pt
+          path: downloads
+
+      - name: Display structure of downloaded files
+        run: ls -R
+        working-directory: downloads
 #name: CML & DVC
 #on: [push]
 #jobs:
