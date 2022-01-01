@@ -1,0 +1,61 @@
+name: CML & DVC
+on: [push]
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    container: docker://ghcr.io/iterative/cml:0-dvc2-base1
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Train model
+        env:
+          GDRIVE_CREDENTIALS_DATA: ${{ secrets.GDRIVE_CREDENTIALS_DATA }}
+          # AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        run: |
+          pip install -r requirements.txt  # Install dependencies
+          # ls
+          # cd flowerpower
+          # git submodule init
+          # git submodule update
+
+          dvc pull # data --run-cache        # Pull data & run-cache from S3
+          dvc repro                        # Reproduce pipeline
+      - name: Create CML report
+        env:
+          REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "## Metrics" >> report.md
+          # Publish confusion matrix diff
+          echo "## Plots" >> report.md
+          echo "### Class confusions" >> report.md
+
+
+          cml send-comment report.md
+
+
+
+#name: CML & DVC
+#on: [push]
+#jobs:
+#  run:
+#    runs-on: ubuntu-latest
+#    container: docker://ghcr.io/iterative/cml:0-dvc2-base1
+#    steps:
+#      - uses: actions/checkout@v2
+#        with:
+#          fetch-depth: 0
+#      - name: Create CML report
+#        env:
+#          GDRIVE_ACCESS_DATA: ${{ secrets.GDRIVE_ACCESS_DATA }}
+#          REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#
+#        run: |
+#          # Your ML workflow goes here
+#          pip install -r requirements.txt
+#
+#          dvc pull
+#
+#          dvc repro
+#
+#          git fetch --prune
