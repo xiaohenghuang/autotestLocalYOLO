@@ -36,10 +36,10 @@ jobs:
 
 
       - name: Archive generated PDF file
-              uses: actions/upload-artifact@v2
-              with:
-                name: best.pt
-                path: yolov5/runs/train/test/weights
+        uses: actions/upload-artifact@v2
+        with:
+          name: best.pt
+          path: yolov5/runs/train/test/weights
 #name: CML & DVC
 #on: [push]
 #jobs:
