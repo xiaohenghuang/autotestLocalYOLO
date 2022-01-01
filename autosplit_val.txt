@@ -1,2 +1,0 @@
-./labeled_data/21-04-13_LOC03_T4_F2_VL.JPG
-./labeled_data/21-04-14_LOC17_T2_F2_VL.JPG
